@@ -1,0 +1,29 @@
+package model;
+
+public class SavingsAccount extends Account {
+
+    private double interestRate;
+
+    // Constructor
+    public SavingsAccount(
+            int accountNumber,
+            double balance,
+            double interestRate
+    ) {
+
+        // Call parent constructor
+        super(accountNumber, balance);
+
+        this.interestRate = interestRate;
+    }
+
+    // Method to apply interest
+    public void applyInterest() {
+
+        double interest = getBalance() * interestRate / 100;
+
+        deposit(interest);
+
+        System.out.println("Interest applied: " + interest);
+    }
+}
