@@ -1,4 +1,5 @@
 package model;
+import exception.BankingException;
 
 public class Account {
 
@@ -31,26 +32,44 @@ public void setBalance(double balance) {
 }
 
     // Deposit method
-    public void deposit(double amount) {
+    // Deposit method
+public void deposit(double amount) throws BankingException {
 
-        balance = balance + amount;
+    if (amount <= 0) {
 
-        System.out.println(amount + " deposited successfully.");
+        throw new BankingException(
+                "Deposit amount must be positive."
+        );
     }
+
+    balance = balance + amount;
+
+    System.out.println(amount + " deposited successfully.");
+}
 
     // Withdraw method
-    public void withdraw(double amount) {
+    // Withdraw method
+public void withdraw(double amount)
+        throws BankingException {
 
-        if (amount > balance) {
+    if (amount <= 0) {
 
-            System.out.println("Insufficient balance.");
-        } else {
-
-            balance = balance - amount;
-
-            System.out.println(amount + " withdrawn successfully.");
-        }
+        throw new BankingException(
+                "Withdraw amount must be positive."
+        );
     }
+
+    if (amount > balance) {
+
+        throw new BankingException(
+                "Insufficient balance."
+        );
+    }
+
+    balance = balance - amount;
+
+    System.out.println(amount + " withdrawn successfully.");
+}
 
     // Display account information
     public void displayAccountInfo() {

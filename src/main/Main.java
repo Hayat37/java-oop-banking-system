@@ -5,6 +5,8 @@ import model.Customer;
 import model.SavingsAccount;
 import model.CurrentAccount;
 
+import exception.BankingException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -20,48 +22,38 @@ public class Main {
                 "0911223344"
         );
 
-        // Create savings account
-        SavingsAccount savings1 = new SavingsAccount(
-                1001,
-                10000,
-                10
-        );
+        // Create accounts
+        SavingsAccount savings1 =
+                new SavingsAccount(1001, 10000, 10);
 
-        // Create current account
-        CurrentAccount current1 = new CurrentAccount(
-                2001,
-                5000,
-                3000
-        );
+        CurrentAccount current1 =
+                new CurrentAccount(2001, 5000, 3000);
 
-        // Add accounts to customer
+        // Add accounts
         customer1.addAccount(savings1);
         customer1.addAccount(current1);
 
-        // Add customer to bank
         bank.addCustomer(customer1);
 
         System.out.println("-------------------");
 
-        // Savings account test
+        try {
+
+            // Valid deposit
+            savings1.deposit(2000);
+
+            // Invalid withdraw
+            savings1.withdraw(50000);
+
+        } catch (BankingException e) {
+
+            System.out.println(
+                    "Error: " + e.getMessage()
+            );
+        }
+
+        System.out.println("-------------------");
+
         savings1.displayAccountInfo();
-
-        savings1.applyInterest();
-
-        savings1.displayAccountInfo();
-
-        System.out.println("-------------------");
-
-        // Current account test
-        current1.displayAccountInfo();
-
-        System.out.println("-------------------");
-
-        // Withdraw using overdraft
-        current1.withdraw(7000);
-
-        System.out.println("-------------------");
-
-        current1.displayAccountInfo();
     }
 }

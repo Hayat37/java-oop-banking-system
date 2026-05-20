@@ -20,10 +20,18 @@ public class SavingsAccount extends Account {
     // Method to apply interest
     public void applyInterest() {
 
-        double interest = getBalance() * interestRate / 100;
+    double interest = getBalance() * interestRate / 100;
+
+    try {
 
         deposit(interest);
 
         System.out.println("Interest applied: " + interest);
+
+    } catch (Exception e) {
+
+        System.out.println(e.getMessage());
     }
+}
+
 }
