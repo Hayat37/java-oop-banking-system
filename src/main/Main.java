@@ -3,6 +3,7 @@ package main;
 import model.Bank;
 import model.Customer;
 import model.SavingsAccount;
+import model.CurrentAccount;
 
 public class Main {
 
@@ -26,25 +27,41 @@ public class Main {
                 10
         );
 
-        // Add account to customer
+        // Create current account
+        CurrentAccount current1 = new CurrentAccount(
+                2001,
+                5000,
+                3000
+        );
+
+        // Add accounts to customer
         customer1.addAccount(savings1);
+        customer1.addAccount(current1);
 
         // Add customer to bank
         bank.addCustomer(customer1);
 
         System.out.println("-------------------");
 
-        // Display before interest
+        // Savings account test
         savings1.displayAccountInfo();
 
-        System.out.println("-------------------");
-
-        // Apply interest
         savings1.applyInterest();
 
+        savings1.displayAccountInfo();
+
         System.out.println("-------------------");
 
-        // Display after interest
-        savings1.displayAccountInfo();
+        // Current account test
+        current1.displayAccountInfo();
+
+        System.out.println("-------------------");
+
+        // Withdraw using overdraft
+        current1.withdraw(7000);
+
+        System.out.println("-------------------");
+
+        current1.displayAccountInfo();
     }
 }
