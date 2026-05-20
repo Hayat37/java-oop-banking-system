@@ -26,8 +26,19 @@ public class Customer {
 
     // Getter for customer ID
 public int getCustomerId() {
-
     return customerId;
+}
+
+public String getName() {
+    return name;
+}
+
+public String getAddress() {
+    return address;
+}
+
+public String getPhone() {
+    return phone;
 }
 
     // Add account

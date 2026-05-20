@@ -1,0 +1,20 @@
+Customer: 1, Hayat, Addis Ababa, 0911223344
+Account: 1001, Balance: 10000.0
+Customer: 1, Hayat, Addis Ababa, 0911223344
+Customer: 1, Hayat, Addis Ababa, 0911223344
+Customer: 1, Hayat, Addis Ababa, 0911223344
+Customer: 1, Hayat, Addis Ababa, 0911223344
+Account: 1001, Balance: 10000.0
+Account: 2001, Balance: 5000.0
+Customer: 2, Hayat, Addis Ababa, 0911223344
+Account: 1001, Balance: 10000.0
+Account: 2001, Balance: 5000.0
+Customer: 2, Hayat, Addis Ababa, 0911223344
+Account: 1001, Balance: 10000.0
+Account: 2001, Balance: 5000.0
+Customer: 2, Hayat, Addis Ababa, 0911223344
+Account: 1001, Balance: 10000.0
+Account: 2001, Balance: 5000.0
+Customer: 2, Hayat, Addis Ababa, 0911223344
+Account: 1001, Balance: 10000.0
+Account: 2001, Balance: 5000.0
