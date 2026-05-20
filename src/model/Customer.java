@@ -47,6 +47,7 @@ public int getCustomerId() {
         System.out.println("Phone: " + phone);
     }
 
+
     // Display all customer accounts
     public void displayAccounts() {
 
@@ -59,4 +60,10 @@ public int getCustomerId() {
             account.displayAccountInfo();
         }
     }
+
+    @Override
+public String toString() {
+
+    return customerId + ", " + name + ", " + address + ", " + phone;
+}
 }

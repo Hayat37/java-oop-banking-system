@@ -6,10 +6,13 @@ import model.SavingsAccount;
 import model.CurrentAccount;
 
 import exception.BankingException;
+import model.FileHandler;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        FileHandler fileHandler = new FileHandler();
 
         // Create bank
         Bank bank = new Bank("Abyssinia Bank");
@@ -21,6 +24,10 @@ public class Main {
                 "Addis Ababa",
                 "0911223344"
         );
+        fileHandler.saveToFile(
+        "Customer: " + customer1,
+        "bank-data.txt"
+);
 
         // Create accounts
         SavingsAccount savings1 =
@@ -28,7 +35,10 @@ public class Main {
 
         CurrentAccount current1 =
                 new CurrentAccount(2001, 5000, 3000);
-
+  fileHandler.saveToFile(
+        "Account: " + savings1,
+        "bank-data.txt"
+);
         // Add accounts
         customer1.addAccount(savings1);
         customer1.addAccount(current1);

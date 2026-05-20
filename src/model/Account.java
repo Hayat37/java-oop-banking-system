@@ -77,4 +77,10 @@ public void withdraw(double amount)
         System.out.println("Account Number: " + accountNumber);
         System.out.println("Balance: " + balance);
     }
+
+    @Override
+public String toString() {
+
+    return accountNumber + ", Balance: " + balance;
+}
 }
